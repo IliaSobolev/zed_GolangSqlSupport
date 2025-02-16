@@ -1,0 +1,21 @@
+id = "GolangSql"
+name = "GolangSql"
+version = "0.0.1"
+schema_version = 1
+description = "Support SQL in .go files"
+repository = ""
+authors = ["BigFatSeal"]
+themes = []
+languages = ["languages/go"]
+
+[lib]
+
+[grammars.go]
+repository = "https://github.com/tree-sitter/tree-sitter-go"
+rev = "5e73f476efafe5c768eda19bbe877f188ded6144"
+
+[language_servers]
+
+[slash_commands]
+
+[indexed_docs_providers]
