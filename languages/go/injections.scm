@@ -12,10 +12,10 @@
     ] @injection.content
     (#set! injection.language "regex")))
 
-(const_spec
- name: (identifier) @_object
- value: (expression_list  
-              (raw_string_literal 
-                (raw_string_literal_content) @injection.content))
-  (#match? @_object "\w*Query")
-  (#set! injection.language "sql"))
+([
+  (interpreted_string_literal_content)
+  (raw_string_literal_content)
+  ] @injection.content
+ (#match? @injection.content "(SELECT|select|INSERT|insert|UPDATE|update|DELETE|delete)")
+(#set! injection.language "sql"))
+
